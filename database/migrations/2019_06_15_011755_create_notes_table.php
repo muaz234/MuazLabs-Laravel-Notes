@@ -11,6 +11,8 @@ class CreateNotesTable extends Migration
      *
      * @return void
      */
+
+     
     public function up()
     {
         Schema::create('notes', function (Blueprint $table) {
