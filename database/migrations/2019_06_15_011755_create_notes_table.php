@@ -22,8 +22,6 @@ class CreateNotesTable extends Migration
             $table->string('points');
             $table->dateTime('posted')->useCurrent = true;
             $table->timestamps();
-
-            
         });
     }
 
