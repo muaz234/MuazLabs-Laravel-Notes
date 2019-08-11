@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Note;
 use Illuminate\Http\Request;
 use DateTime;
 class NoteController extends Controller
@@ -14,6 +14,9 @@ class NoteController extends Controller
     public function index()
     {
         //
+
+        $notes = Note::all();
+        return view('notes.index', compact('notes'));
     }
 
     /**
@@ -38,11 +41,9 @@ class NoteController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'points' => 'required',
-
+            'points' => 'required'
         ]);
         $now = new Datetime;
-        return view('note')->with('time', $now);
         $new = new Note([
             'title' => $request->get('title'),
             'points' => $request->get('points'),

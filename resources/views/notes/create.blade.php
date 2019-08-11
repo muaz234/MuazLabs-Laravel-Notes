@@ -26,7 +26,7 @@
                 <input type="text" class="form-control" name="points"/>
             </div>
 
-            <button type="submit" class="btn btn-primary-outline">Create New Note</button>
+            <button type="submit" class="btn btn-success">Create New Note</button>
         </form>
     </div>
     </div>

@@ -8,9 +8,10 @@ class Note extends Model
 {
     //
 
-    protected $fillable= [
-        'title',
-        'posted',
-        'points'
-    ]
+    protected $fillable = [
+        'title', 'points', 'posted',
+    ];
+
 }
+
+?>
