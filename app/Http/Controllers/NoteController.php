@@ -38,15 +38,15 @@ class NoteController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'points' => 'required'
-            'posted' => 'required'
-        ])
+            'points' => 'required',
+            
+        ]);
         $now = new Datetime;
         return view('note')->with('time', $now);
         $new = new Note([
             'title' => $request->get('title'),
             'points' => $request->get('points'),
-            'posted' => $request->get('posted')
+            'posted' => $now
         ]);  
         $new->save();
         return redirect('/notes')->with('success', 'New notes successfully saved!.');      
