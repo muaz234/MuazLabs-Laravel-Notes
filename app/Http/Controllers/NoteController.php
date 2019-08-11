@@ -25,7 +25,7 @@ class NoteController extends Controller
     {
         //
 
-        return view('notes.add');
+        return view('notes.create');
     }
 
     /**
@@ -39,7 +39,7 @@ class NoteController extends Controller
         $request->validate([
             'title' => 'required',
             'points' => 'required',
-            
+
         ]);
         $now = new Datetime;
         return view('note')->with('time', $now);
@@ -47,9 +47,9 @@ class NoteController extends Controller
             'title' => $request->get('title'),
             'points' => $request->get('points'),
             'posted' => $now
-        ]);  
+        ]);
         $new->save();
-        return redirect('/notes')->with('success', 'New notes successfully saved!.');      
+        return redirect('/notes')->with('success', 'New notes successfully saved!.');
     }
 
     /**
