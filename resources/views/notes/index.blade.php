@@ -14,6 +14,7 @@
                         <th>Description</th>
                         <th>Posted On</th>
                         <th>Timestamps</th>
+                        <th>Actions</th>
                     </thead>
 
                     <tbody>
@@ -24,6 +25,14 @@
                         <td style="margin-left:5px;">{{$note->points}}</td>
                         <td style="margin-left:5px;">{{$note->posted}}</td>
                         <td>{{$note->created_at}}</td>
+                        <td><a href="{{route('notes.edit', $note->id)}}"><button type="button" class="btn btn-info">Edit</button></a>
+
+                            <form method="POST" action="{{route('notes.destroy', $note->id)}}">
+                                @CSRF
+                                @method('delete')
+                                <button type="button" class="btn btn-danger" style="margin-top: 5px;com">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>
