@@ -11,6 +11,8 @@ class CreateNotesTable extends Migration
      *
      * @return void
      */
+
+     
     public function up()
     {
         Schema::create('notes', function (Blueprint $table) {
@@ -19,6 +21,7 @@ class CreateNotesTable extends Migration
             $table->string('title')->unique();
             $table->string('points');
             $table->dateTime('posted')->useCurrent = true;
+            $table->timestamps();
         });
     }
 
