@@ -30,7 +30,7 @@
                             <form method="POST" action="{{route('notes.destroy', $note->id)}}">
                                 @CSRF
                                 @method('delete')
-                                <button type="button" class="btn btn-danger" style="margin-top: 5px;com">Delete</button>
+                                <button type="button" class="btn btn-danger" style="margin-top: 5px;">Delete</button>
                             </form>
                         </td>
                     </tr>

@@ -73,6 +73,8 @@ class NoteController extends Controller
     public function edit($id)
     {
         //
+        $note = Note::find($id);
+        return view('notes.edit', compact('note'));
     }
 
     /**
@@ -84,7 +86,17 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'points'=>'required'
+        ]);
+        $note = Note::find($id);
+        $note->title = $request->get('title');
+        $note->points = $request->get('points');
+        $now = new DateTime();
+        $note->posted = $now;
+        $note->save();
+        return redirect('/notes')->with('success', 'Notes has been edited successfully');
     }
 
     /**
