@@ -9,11 +9,14 @@
             </div>
         @endif
     </div>
+        <div class="row">
+                <a href="{{ route('notes.create') }}" class="btn btn-primary text-center" >Create New Note</a>
+        </div>
+
         <div class='row' style="margin-top: 50px; justify-content: center;">
             <div class="col-md-3">
 
             </div>
-
 
 
             <div class="col-md-6">

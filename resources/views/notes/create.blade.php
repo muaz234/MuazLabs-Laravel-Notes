@@ -3,7 +3,7 @@
     @section('main')
     <div class="row">
     <div class="col-sm-8 offset-sm-2">
-        <h1 class="display-3">Add Notes</h1>
+        <h2 class="pull-right">Add Notes</h2>
     <div>
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -23,7 +23,7 @@
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <input type="text" class="form-control" name="points"/>
+                <input type="textarea" class="form-control" name="points"/>
             </div>
 
             <button type="submit" class="btn btn-success">Create New Note</button>
