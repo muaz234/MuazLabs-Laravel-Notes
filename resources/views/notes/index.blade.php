@@ -1,12 +1,22 @@
 @extends('template')
 
     @section('main')
+    <div class="col-sm-12">
+
+        @if(session()->get('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        @endif
+    </div>
         <div class='row' style="margin-top: 50px; justify-content: center;">
             <div class="col-md-3">
 
             </div>
 
-            <div class="col-md-8">
+
+
+            <div class="col-md-6">
                 <table class="table table-hover">
                     <thead>
                         <th>ID</th>
@@ -27,10 +37,10 @@
                         <td>{{$note->created_at}}</td>
                         <td><a href="{{route('notes.edit', $note->id)}}"><button type="button" class="btn btn-info">Edit</button></a>
 
-                            <form method="POST" action="{{route('notes.destroy', $note->id)}}">
-                                @CSRF
-                                @method('delete')
-                                <button type="button" class="btn btn-danger" style="margin-top: 5px;">Delete</button>
+                            <form method="post" action="{{ route('notes.destroy', $note->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" style="margin-top: 5px;">Delete</button>
                             </form>
                         </td>
                     </tr>
