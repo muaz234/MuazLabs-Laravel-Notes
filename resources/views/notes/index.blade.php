@@ -10,8 +10,8 @@
             </div>
         @endif
     </div>
-        <div class="row">
-                <a href="{{ route('notes.create') }}" class="btn btn-primary text-center" >Create New Note</a>
+            <div class="text-center" style="margin-top: 10px;">
+                    <a href="{{ route('notes.create') }}" class="btn btn-primary" >Add New Note</a>
         </div>
 
         <div class='row' style="margin-top: 50px; justify-content: center;">

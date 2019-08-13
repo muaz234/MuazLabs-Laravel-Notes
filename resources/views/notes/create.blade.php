@@ -2,20 +2,28 @@
 
     @section('main')
     <div class="row">
-    <div class="col-sm-8 offset-sm-2">
-        <h2 class="pull-right">Add Notes</h2>
-    <div>
-        @if ($errors->any())
+        <div class="col-sm-8 offset-sm-2">
+            <h2 class="text-center font-weight-bold">Add Notes</h2>
+        <div>
+
+            @if ($errors->any())
+
         <div class="alert alert-danger">
+
             <ul>
                 @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
-        </div><br />
+
+        </div>
+        <br />
+
         @endif
+
         <form method="post" action="{{ route('notes.store') }}">
             @csrf
+
             <div class="form-group">
                 <label for="Title">Title</label>
                 <input type="text" class="form-control" name="title"/>
@@ -23,10 +31,13 @@
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <input type="textarea" class="form-control" name="points"/>
+                <textarea rows="2" class="form-control" name="points"></textarea>
             </div>
+            <div class="float-right">
+                <a role="button" class="btn btn-dark" href="{{route('notes.index')}}">Back</a>
+                <button type="submit" class="pull-right btn btn-success">Create New Note</button>
 
-            <button type="submit" class="btn btn-success">Create New Note</button>
+            </div>
         </form>
     </div>
     </div>
