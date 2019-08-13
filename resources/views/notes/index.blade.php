@@ -1,6 +1,7 @@
 @extends('template')
 
     @section('main')
+
     <div class="col-sm-12">
 
         @if(session()->get('success'))
@@ -40,10 +41,10 @@
                         <td>{{$note->created_at}}</td>
                         <td><a href="{{route('notes.edit', $note->id)}}"><button type="button" class="btn btn-info">Edit</button></a>
 
-                            <form method="post" action="{{ route('notes.destroy', $note->id) }}">
+                        <form method="post" action="{{route('notes.destroy', $note->id)}}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger" style="margin-top: 5px;">Delete</button>
+                                    <button type="submit" class="delete btn btn-danger" style="margin-top: 5px;">Delete</button>
                             </form>
                         </td>
                     </tr>

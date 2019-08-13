@@ -4,6 +4,7 @@
             <title>Notes App</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
             <div class="text-center" style="margin-top:10px; text-color=#ffffff">
+
                 <h2>Laravel Notes</h2>
             </div>
         </header>
