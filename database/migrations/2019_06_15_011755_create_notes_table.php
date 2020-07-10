@@ -17,8 +17,8 @@ class CreateNotesTable extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
-            $table->string('title')->unique();
+            // $table->timestamps();
+            $table->string('title');
             $table->string('points');
             $table->dateTime('posted')->useCurrent = true;
             $table->timestamps();

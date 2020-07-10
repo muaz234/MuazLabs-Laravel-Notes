@@ -15,12 +15,12 @@
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea type="text" class="form-control" name="points" value="{{$note->points}}"></textarea>
+                    <textarea type="text" class="form-control" name="points">{{$note->points}}</textarea>
                 </div>
 
                 <div class="float-right">
+                <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i> &nbsp;Update Note</button>
                 <a href="{{route('notes.index')}}" class="btn btn-light">Back</a>
-                    <button type="submit" class="btn btn-success">Update Note</button>
                 </div>
 
             </form>
