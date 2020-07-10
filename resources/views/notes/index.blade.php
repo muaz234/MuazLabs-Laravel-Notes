@@ -42,12 +42,12 @@
                                 <td style="margin-left:5px; vertical-align: middle;">{{$note->posted}}</td>
                                 <td style="color:blue; vertical-align: middle;">{{$note->created_at}}</td>
                                 <div class="btn-group">
-                                <td class="text-center"><a href="{{route('notes.edit', $note->id)}}"><button type="button" class="btn btn-info btn-block">Edit</button></a></td>
+                                <td class="text-center"><a href="{{route('notes.edit', $note->id)}}"><button type="button" class="btn btn-info btn-block"><i class="fa fa-reply-all" aria-hidden="true"></i>&nbsp;</button></a></td>
                                 <td>
                                         <form method="post" action="{{route('notes.destroy', $note->id)}}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="delete btn btn-danger btn-block">Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-block"><i class="fa fa-eraser" aria-hidden="true"></i></button>
                                     </form>
                                 </td>
                             </div>

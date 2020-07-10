@@ -34,8 +34,8 @@
                 <textarea rows="2" class="form-control" name="points"></textarea>
             </div>
             <div class="float-right">
+                <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp; New Note</button>
                 <a role="button" class="btn btn-dark" href="{{route('notes.index')}}">Back</a>
-                <button type="submit" class="pull-right btn btn-success">Create New Note</button>
 
             </div>
         </form>
